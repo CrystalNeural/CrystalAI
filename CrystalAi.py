@@ -18,10 +18,9 @@ def gen(userText):
     text = AI_response['text']
     context.append({"role": "assistant", "content": AI_response["text"]})
     if AI_response["command"]: text += f"\n\nВнимание, Нейронная сеть отправила команду:\n```{AI_response['command']}```\nКоманда выполнится автоматический!"
-    md = Markdown(text)
+    md = Markdown("\n"+text+"\n")
     # print()
-    console.print("\n" + md)
-    print()
+    console.print(md)
     if AI_response['command']:
         try:
             stdout = subprocess.check_output(AI_response['command'], shell=True, text=True, stderr=subprocess.STDOUT)
