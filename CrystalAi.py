@@ -21,5 +21,8 @@ while True:
             print()
         console.print(Markdown(response["text"]))
         print()
+    except KeyboardInterrupt:
+        print("\nЗавершение...")
+        exit(0)
     except Exception as e:
         print(f"Ошибка: {repr(e)}")
