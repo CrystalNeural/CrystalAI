@@ -22,7 +22,7 @@ pip install -r requirements.txt
 
 ## Настройка
 
-Вы должны заранее знать ваш API ключ от Gemini.
+Вы должны заранее знать ваш API ключ от Gemini. (Можно узнать/создать на сайте https://aistudio.google.com/app/apikey)
 
 Вставляете в файл config.py API ключ
 
