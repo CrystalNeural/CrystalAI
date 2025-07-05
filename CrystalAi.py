@@ -18,7 +18,7 @@ while True:
         response = gemini.send_message(userText)
         if response["cmd"]:
             console.print(Markdown("\n" + f"Вывод команды {response['cmd']['command']}:\n\n```\n{response['cmd']['command_output']}```"))
-        print()
+            print()
         console.print(Markdown(response["text"]))
         print()
     except Exception as e:
