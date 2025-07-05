@@ -47,5 +47,5 @@ class Gemini:
         if not message: raise ValueError("Укажите текст!")
         response = self.chat.send_message(message)
         if response.automatic_function_calling_history:
-            return {"text": response.text, "cmd": {"command": response.automatic_function_calling_history[-2].parts[0].function_call.args["command"], "command_output": response.automatic_function_calling_history[-1].parts[0].function_response.response["result"]}}
+            return {"text": response.text, "cmd": {"command": response.automatic_function_calling_history[-2].parts[-1].function_call.args["command"], "command_output": response.automatic_function_calling_history[-1].parts[0].function_response.response["result"]}}
         return {"text": response.text, "cmd": None}
