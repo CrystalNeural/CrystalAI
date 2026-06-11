@@ -23,8 +23,7 @@ def run_command(command: str) -> str:
         command_output = subprocess.check_output(command, shell=True, text=True, stderr=subprocess.STDOUT)
     except subprocess.CalledProcessError as e:
         command_output = f"Ошибка: {e.output}"
-    finally:
-        return command_output
+    return command_output
 
 class Gemini:
     def __init__(self, token, model="gemini-2.5-flash"):
